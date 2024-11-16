@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Steganography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #0078d7;
+            margin-top: 20px;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0078d7;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Steganography</h1>
+    <div class="container">
+        <h2>Encode Message</h2>
+        <form action="/encode" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <textarea name="message" placeholder="Enter your secret message here..." required></textarea>
+            <button type="submit">Encode Message</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Decode Message</h2>
+        <form action="/decode" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Decode Message</button>
+        </form>
+    </div>
+</body>
+</html>
